@@ -18,13 +18,34 @@
       margin: 10px;
       cursor: pointer;
     }
+    #yesImage {
+      display: none;
+      margin-top: 20px;
+      max-width: 300px;
+    }
   </style>
 </head>
 <body>
   <div>
-    <h1>Will you be my Valentine? 💖</h1>
-    <button onclick="alert('YAY 💕')">Yes</button>
-    <button onclick="alert('Too bad 😈')">No</button>
+    <h1 id="question">Will you be my Valentine? 💖</h1>
+
+    <button onclick="sayYes()">Yes</button>
+    <button onclick="sayNo()">No</button>
+
+    <!-- Image appears after Yes -->
+    <img id="yesImage" src="yes.gif.gif" alt="YAY 💕">
   </div>
+
+  <script>
+    function sayYes() {
+      document.getElementById("question").innerText = "YAY!! 💕🥰";
+      document.getElementById("yesImage").style.display = "block";
+    }
+
+    function sayNo() {
+      alert("Nice try 😈");
+    }
+  </script>
 </body>
 </html>
+
