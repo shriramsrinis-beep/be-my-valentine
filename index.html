@@ -12,13 +12,15 @@
       background: pink;
       text-align: center;
     }
+
     button {
       font-size: 20px;
       padding: 10px 20px;
       margin: 10px;
       cursor: pointer;
     }
-    #yesImage {
+
+    img {
       display: none;
       margin-top: 20px;
       max-width: 300px;
@@ -29,21 +31,27 @@
   <div>
     <h1 id="question">Will you be my Valentine? 💖</h1>
 
-    <button onclick="sayYes()">Yes</button>
-    <button onclick="sayNo()">No</button>
+    <div id="buttons">
+      <button onclick="sayYes()">Yes</button>
+      <button onclick="sayNo()">No</button>
+    </div>
 
-    <!-- Image appears after Yes -->
+    <!-- Images -->
     <img id="yesImage" src="yes.gif.gif" alt="YAY 💕">
+    <img id="noImage" src="no.gif" alt="Oh no 💔">
   </div>
 
   <script>
     function sayYes() {
-      document.getElementById("question").innerText = "YAY!! 💕🥰";
+      document.getElementById("question").innerText = "SHE SAID YES 💕🥰";
+      document.getElementById("buttons").style.display = "none";
       document.getElementById("yesImage").style.display = "block";
     }
 
     function sayNo() {
-      alert("Nice try 😈");
+      document.getElementById("question").innerText = "Wow. Heartbroken 💔";
+      document.getElementById("buttons").style.display = "none";
+      document.getElementById("noImage").style.display = "block";
     }
   </script>
 </body>
